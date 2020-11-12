@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>方法重写与重载 | 磐石-刘佳</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="一个能赚钱的网站">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.a9429d79.css" as="style"><link rel="preload" href="/blog/assets/js/app.98f10789.js" as="script"><link rel="preload" href="/blog/assets/js/2.7da6504d.js" as="script"><link rel="preload" href="/blog/assets/js/9.4e639782.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.409e729d.js"><link rel="prefetch" href="/blog/assets/js/11.23b75cda.js"><link rel="prefetch" href="/blog/assets/js/12.05b24d8d.js"><link rel="prefetch" href="/blog/assets/js/13.dfe80841.js"><link rel="prefetch" href="/blog/assets/js/14.6a0b2e0b.js"><link rel="prefetch" href="/blog/assets/js/15.53021dde.js"><link rel="prefetch" href="/blog/assets/js/3.9f61cab6.js"><link rel="prefetch" href="/blog/assets/js/4.d1ae9c7a.js"><link rel="prefetch" href="/blog/assets/js/5.fc791712.js"><link rel="prefetch" href="/blog/assets/js/6.ffe6f60a.js"><link rel="prefetch" href="/blog/assets/js/7.57f58caf.js"><link rel="prefetch" href="/blog/assets/js/8.6f02bba0.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.a9429d79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">磐石-刘佳</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/guide/" class="nav-link">
+  面试指南
+</a></div><div class="nav-item"><a href="/blog/base/" class="nav-link router-link-active">
+  JAVA编程
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/guide/" class="nav-link">
+  面试指南
+</a></div><div class="nav-item"><a href="/blog/base/" class="nav-link router-link-active">
+  JAVA编程
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/base/" aria-current="page" class="sidebar-link">面向对象</a></li><li><a href="/blog/base/java.html" aria-current="page" class="active sidebar-link">方法重写与重载</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/base/java.html#重载" class="sidebar-link">重载</a></li><li class="sidebar-sub-header"><a href="/blog/base/java.html#重写" class="sidebar-link">重写</a></li><li class="sidebar-sub-header"><a href="/blog/base/java.html#重载和重写区别" class="sidebar-link">重载和重写区别</a></li><li class="sidebar-sub-header"><a href="/blog/base/java.html#重载注意事项" class="sidebar-link">重载注意事项</a></li><li class="sidebar-sub-header"><a href="/blog/base/java.html#重写注意事项" class="sidebar-link">重写注意事项</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>高级</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/python/" class="sidebar-link">Python编程</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="方法重写与重载"><a href="#方法重写与重载" class="header-anchor">#</a> 方法重写与重载</h1> <h2 id="重载"><a href="#重载" class="header-anchor">#</a> 重载</h2> <p>简单说，就是函数或者方法有同样的名称，但是参数列表不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。</p> <h2 id="重写"><a href="#重写" class="header-anchor">#</a> 重写</h2> <p>重写指的是在Java的子类与父类中有两个名称、参数列表都相同的方法的情况。由于他们具有相同的方法签名，所以子类中的新方法将覆盖父类中原有的方法。</p> <h2 id="重载和重写区别"><a href="#重载和重写区别" class="header-anchor">#</a> 重载和重写区别</h2> <p>1、重载是一个编译期概念、重写是一个运行期间概念。</p> <p>2、重载遵循所谓“编译期绑定”，即在编译时根据参数变量的类型判断应该调用哪个方法。</p> <p>3、重写遵循所谓“运行期绑定”，即在运行的时候，根据引用变量所指向的实际对象的类型来调用方法</p> <p>4、因为在编译期已经确定调用哪个方法，所以重载并不是多态。而重写是多态。重载只是一种语言特性，是一种语法规则，与多态无关，与面向对象也无关。（注：严格来说，重载是编译时多态，即静态多态。但是，Java中提到的多态，在不特别说明的情况下都指动态多态）</p> <h2 id="重载注意事项"><a href="#重载注意事项" class="header-anchor">#</a> 重载注意事项</h2> <p>被重载的方法必须改变参数列表；</p> <p>被重载的方法可以改变返回类型；</p> <p>被重载的方法可以改变访问修饰符；</p> <p>被重载的方法可以声明新的或更广的检查异常；</p> <p>方法能够在同一个类中或者在一个子类中被重载。</p> <h2 id="重写注意事项"><a href="#重写注意事项" class="header-anchor">#</a> 重写注意事项</h2> <p>参数列表必须完全与被重写方法的相同；</p> <p>返回类型必须完全与被重写方法的返回类型相同；</p> <p>访问级别的限制性一定不能比被重写方法的强；</p> <p>访问级别的限制性可以比被重写方法的弱；</p> <p>重写方法一定不能抛出新的检查异常或比被重写的方法声明的检查异常更广泛的检查异常</p> <p>重写的方法能够抛出更少或更有限的异常（也就是说，被重写的方法声明了异常，但重写的方法可以什么也不声明）</p> <p>不能重写被标示为final的方法；</p> <p>如果不能继承一个方法，则不能重写这个方法</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/base/" class="prev router-link-active">
+        面向对象
+      </a></span> <span class="next"><a href="/blog/python/">
+        Python编程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.98f10789.js" defer></script><script src="/blog/assets/js/2.7da6504d.js" defer></script><script src="/blog/assets/js/9.4e639782.js" defer></script>
+  </body>
+</html>
